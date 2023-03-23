@@ -111,13 +111,18 @@ body {
   align-items: center;
   width: max-content;
   height: 30rem;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.14);
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
   padding: 1.5rem;
-  background-color: #171810;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.3s ease-out;
   box-shadow: 6px 0 5px rgba(100, 100, 100, 0.25);
   z-index: 100;
+}
+.social-media:hover {
+  transition: 0.3s ease-in;
+  background-color: #171810;
 }
 .social-media .links {
   width: 100%;
@@ -149,8 +154,7 @@ body {
   max-width: 100rem;
   min-height: 100vh;
   margin: 0 auto;
-  padding-top: 5rem;
-  padding-left: 5rem;
+  padding: 5rem;
 }
 .main-content .about-me h2 {
   font-weight: 700;
@@ -183,8 +187,7 @@ body {
   grid-gap: 2rem;
   background-color: #171810;
   min-height: 100vh;
-  padding-top: 5rem;
-  padding-left: 5rem;
+  padding: 5rem;
 }
 .main-content .projects h2 {
   font-weight: 700;
@@ -265,7 +268,7 @@ body {
 }
 .main-content .projects .project-grid .make-with .technologies {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-items: center;
 }
@@ -321,10 +324,45 @@ body {
   align-items: center;
   justify-content: space-around;
   grid-gap: 1rem;
-  padding: 1rem;
+  padding: 1.3rem;
 }
 .main-content .projects .project-grid .api-projects .make-with p {
   color: white;
+}
+
+.hard-skills {
+  padding: 5rem;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+.hard-skills h2 {
+  font-weight: 700;
+  padding: 1rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.hard-skills hr {
+  margin: 1rem 0 3rem 0;
+}
+.hard-skills .skills {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+  grid-gap: 1.5rem;
+}
+.hard-skills .skills li {
+  text-align: center;
+  font-weight: 900;
+  border: 1px solid black;
+  border-radius: 0.4rem;
+  box-shadow: 7px 8px 7px rgba(100, 100, 100, 0.12);
+  padding: 1rem;
+  letter-spacing: 1px;
+}
+.hard-skills .skills li:nth-child(even) {
+  color: white;
+  background-color: #171810;
 }
 
 /*# sourceMappingURL=style.css.map */
