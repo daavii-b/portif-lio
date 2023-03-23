@@ -188,6 +188,7 @@ body {
     a {
       color: white;
       font-size: 2.3rem;
+      font-size: 2.3rem;
 
       transition: 0.2s ease;
 
@@ -210,6 +211,8 @@ body {
     align-items: flex-start;
     justify-content: center;
 
+    grid-gap: 3rem;
+
     min-height: 100vh;
 
     margin: 0 auto;
@@ -228,6 +231,7 @@ body {
 
     .resume {
       width: 100%;
+      max-width: 70rem;
     }
 
     .photos {
@@ -235,15 +239,31 @@ body {
       height: max-content;
       position: relative;
 
+      width: max-content;
+      height: max-content;
+      position: relative;
+
 
       .image {
+        width: 100%;
         width: 100%;
         overflow: hidden;
 
         img {
           width: 100%;
+          width: 100%;
           border-radius: 0.4rem;
           box-shadow: 7px 5px 5px rgba(100, 100, 100, 0.2);
+        }
+      }
+
+      .gamer {
+        position: absolute;
+        top: 9rem;
+        right: -5rem;
+        img {
+          border-top: 16px solid white;
+          border-left: 16px solid white;
         }
       }
 
@@ -388,6 +408,7 @@ body {
         display: flex;
         flex-direction: column;
         grid-gap: 2.4rem;
+        grid-gap: 2.4rem;
 
         align-self: flex-start;
         justify-self: flex-start;
@@ -516,6 +537,7 @@ body {
     justify-content: center;
 
     background-color: $color-secondary;
+    background-color: $color-secondary;
 
     z-index: 1000;
 
@@ -523,9 +545,11 @@ body {
     p {
         font-weight: bolder;
         color: white;
+        color: white;
         a {
             z-index: 1000;
             display: inline-block;
+            color: $color-primary;
             color: $color-primary;
             font-weight: bolder;
         }

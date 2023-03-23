@@ -135,6 +135,7 @@ body {
 .social-media .links a {
   color: white;
   font-size: 2.3rem;
+  font-size: 2.3rem;
   transition: 0.2s ease;
 }
 .social-media .links a:hover {
@@ -151,6 +152,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  grid-gap: 3rem;
   min-height: 100vh;
   margin: 0 auto;
   padding: 5rem;
@@ -167,20 +169,35 @@ body {
 }
 .main-content .about-me .resume {
   width: 100%;
+  max-width: 70rem;
 }
 .main-content .about-me .photos {
+  width: max-content;
+  height: max-content;
+  position: relative;
   width: max-content;
   height: max-content;
   position: relative;
 }
 .main-content .about-me .photos .image {
   width: 100%;
+  width: 100%;
   overflow: hidden;
 }
 .main-content .about-me .photos .image img {
   width: 100%;
+  width: 100%;
   border-radius: 0.4rem;
   box-shadow: 7px 5px 5px rgba(100, 100, 100, 0.2);
+}
+.main-content .about-me .photos .gamer {
+  position: absolute;
+  top: 9rem;
+  right: -5rem;
+}
+.main-content .about-me .photos .gamer img {
+  border-top: 16px solid white;
+  border-left: 16px solid white;
 }
 .main-content .about-me .photos .gamer {
   position: absolute;
@@ -293,6 +310,7 @@ body {
   display: flex;
   flex-direction: column;
   grid-gap: 2.4rem;
+  grid-gap: 2.4rem;
   align-self: flex-start;
   justify-self: flex-start;
 }
@@ -384,15 +402,18 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #171810;
+  background-color: #171810;
   z-index: 1000;
 }
 .footer p {
   font-weight: bolder;
   color: white;
+  color: white;
 }
 .footer p a {
   z-index: 1000;
   display: inline-block;
+  color: #03fa6e;
   color: #03fa6e;
   font-weight: bolder;
 }
