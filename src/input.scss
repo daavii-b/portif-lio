@@ -491,3 +491,29 @@ body {
 
 
 }
+
+
+.footer {
+    width: 100%;
+    height: 10rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $color-primary;
+
+    z-index: 1000;
+
+
+    p {
+        font-weight: bolder;
+        a {
+            z-index: 1000;
+            display: inline-block;
+            color: $color-secondary;
+            font-weight: bolder;
+        }
+    }
+
+}
