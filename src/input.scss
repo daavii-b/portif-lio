@@ -160,24 +160,25 @@ h1, h2, h3, h4, h5, h6 {
 
   background-color: rgba(0, 0, 0, 0.03);
 
-  border-radius: .4rem;
+  border-radius: .6rem;
 
   address {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    grid-gap: $paddin-extra-large;
 
     padding: $paddin-large 0;
 
 
     span {
       @include defaultWidth(20rem);
-
+      width: 100%;
       height: 100%;
       font-size: 2.4rem;
       text-align: center;
 
       a {
+        padding: 0 $paddin-large;
         color: $color-black;
       }
     }
@@ -199,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: $paddin-large 0;
 
   h2 {
-    font-size: $font-size-medium;
+    font-size: $font-size-small;
     color: $color-blue;
     padding: $paddin-medium 0;
   }
@@ -254,7 +255,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: $paddin-large 0;
     text-align: center;
 
-    font-size: $font-size-medium;
+    font-size: $font-size-small;
 
     align-self: flex-start;
 
@@ -381,6 +382,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 
 
+
   h2 {
     @include defaultWidth(100rem);
     background-color:  $color-blue;
@@ -390,17 +392,18 @@ h1, h2, h3, h4, h5, h6 {
 
     box-shadow: -4px 8px 5px rgba(150, 150, 150, .58);
     align-self: flex-end;
-  }
+    font-size: $font-size-small;
+}
 
 
-  .skills {
+.skills {
     width: 100%;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
     gap: 2rem;
 
-    padding: $paddin-large 0;
+    padding: $paddin-large;
 
 
     li {
@@ -450,6 +453,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
 
+
+
   .header {
       background-size: cover;
       padding: $paddin-small 0;
@@ -488,6 +493,14 @@ h1, h2, h3, h4, h5, h6 {
         }
       }
 
+    }
+
+    .social-media {
+        address {
+            a {
+                padding: $paddin-medium;
+            }
+        }
     }
 
     .about-me {
