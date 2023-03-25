@@ -1,554 +1,678 @@
-$font-primary: 'Inter', sans-serif;
-$font-secondary: 'Poppins', sans-serif;
+// Variables
+$font-header-primary: 'Merriweather', serif;
+$font-header-secondary: 'Inter', sans-serif;
+$font-text-main: 'Raleway', sans-serif;
+$font-text-primary:'Old Standard TT', serif;
+$font-text-secondary: 'Poppins', sans-serif;
 
-$color-primary: #03fa6e;
-$color-secondary: #171810;
+$color-black: #171810;
+$color-blue:  rgb(0, 104, 255);
+$color-brown: #64301a;
 
-$color-text-primary: #11a34f;
-$color-text-secondary: #262626;
+$paddin-small: .8rem;
+$paddin-medium: 1.6rem;
+$paddin-large: 2.4rem;
+$paddin-extra-large: 4.0rem;
 
-@mixin title {
-  font-weight: 700;
-  padding: 1rem;
+$font-size-small: 2.4rem;
+$font-size-medium: 3.2rem;
+$font-size-large: 4rem;
 
-  letter-spacing: 1px;
+@mixin defaultWidth($width) {
+  width: 100%;
+  max-width: $width;
 }
 
-@mixin defaultPadding {
-    padding: 5rem;
-}
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  list-style: none;
 }
 
-:root,
-html {
+:root, html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
 body {
-  font-family: $font-secondary;
   font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-family: $font-text-main;
+}
 
+button:hover, a:hover {
+  cursor: pointer;
 }
 
 img {
   max-width: 100%;
-  max-height: 100%;
 }
 
-button {
-  cursor: pointer;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $font-primary;
-  font-weight: 400;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-header-primary;
+  letter-spacing: 1.6px;
 }
 
 
 .header {
-  width: 100%;
-  border: 1px solid black;
-
   display: flex;
+  flex-direction: column;
   align-items: center;
 
-  padding: 1rem 5rem;
+  gap: 2.4rem;
 
-  background-color: black;
 
-  box-shadow: 0 10px 10px rgba(100, 100, 100, 0.35);
+  width: 100%;
+  height:  24rem;
 
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  padding: 5.6rem;
 
-  overflow: hidden;
 
-  z-index: 1000;
+  background-image:  url('/public/assets/images/header/nubelson-fernandes--Xqckh_XVU4-unsplash.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: auto;
 
-  &::after {
-    content: '';
 
-    position: absolute;
+  .logo {
+    @include defaultWidth(100rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    width: 24rem;
-    height: 7rem;
-    background-color: $color-primary;
+    gap: 1.6rem;
+    height: 8rem;
 
-    top: 0.2rem;
-    right: -11rem;
+    font-size: 3.2rem;
 
-    transform: rotate(40deg);
-  }
+    text-align: center;
 
-  .logo-container {
-    width: 7rem;
-    height: 7rem;
+    letter-spacing:  1.6px;
 
-    img {
-      border-radius: 50%;
+    background-color: white;
+
+    border-radius:  .8rem;
+
+    i {
+      color: $color-blue;
     }
   }
 
+
   .navigation {
-    width: 100%;
-    height: 100%;
+    @include defaultWidth(80rem);
 
-    ul {
-      width: 100%;
-      height: 100%;
-
+     ul {
       display: flex;
       align-items: center;
       justify-content: space-around;
 
-      grid-gap: 1rem;
+      gap: 1.6rem;
 
       li {
         width: 100%;
-        height: 100%;
         text-align: center;
-      }
-    }
 
-    a {
-      font-size: 1.6rem;
-      font-weight: 600;
+        list-style: none;
 
-      letter-spacing: 3px;
+        border: 1px solid $color-blue;
+        border-radius: .4rem;
 
-      color: white;
-      transition: 0.3s ease-out;
+        box-shadow: 4px 7px 6px rgba(150, 150, 150, .15);
 
-      &:hover {
-        font-weight: 900;
-        transition: 0.3s ease;
-        color: $color-primary;
+        transition: .3s ease-in;
+
+        &:hover {
+          background-color: $color-blue;
+          transition: .3s ease-out;
+
+           a {
+            color: white;
+           }
+        }
+
+        a {
+          display:block;
+          font-family: $font-text-secondary;
+          font-size: 1.6rem;
+          font-weight: 800;
+          letter-spacing: 2.4px;
+          color: black;
+          padding: $paddin-small;
+        }
       }
     }
   }
+}
+
+.rule {
+  border: 1px solid rgba(0, 104, 255, 0.2);
+  box-shadow: 0 6px 7px rgba(0, 0, 0, .2);
 }
 
 .social-media {
-  position: fixed;
-
-  top: 15rem;
-  left: 0;
-
+  @include defaultWidth(60rem);
+  margin: 2rem auto;
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  width: max-content;
-  height: 30rem;
+  background-color: rgba(0, 0, 0, 0.03);
 
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  border-top-right-radius: 0.4rem;
-  border-bottom-right-radius: 0.4rem;
+  border-radius: .4rem;
 
-  padding: 1.5rem;
-
-  background-color: rgba(0, 0, 0, 0.4);
-
-  transition: .3s ease-out;
-  box-shadow: 6px 0 5px rgba(100, 100, 100, 0.25);
-  z-index: 100;
-
-  &:hover {
-    transition: .3s ease-in;
-    background-color: $color-secondary;
-  }
-
-  .links {
-    width: 100%;
-    height: 100%;
-
+  address {
     display: flex;
     align-items: center;
-    flex-direction: column;
-
     justify-content: space-around;
 
-    a {
-      color: white;
-      font-size: 2.3rem;
-      font-size: 2.3rem;
+    padding: $paddin-large 0;
 
-      transition: 0.2s ease;
 
-      &:hover {
-        transition: 0.2s ease-in;
-        color: $color-primary;
+    span {
+      @include defaultWidth(20rem);
+
+      height: 100%;
+      font-size: 2.4rem;
+      text-align: center;
+
+      a {
+        color: $color-black;
       }
+    }
+
+
+  }
+}
+
+.about-me {
+  @include defaultWidth(100rem);
+
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(66rem, 32rem) minmax(33rem, 16rem);
+
+  align-items: center;
+  justify-content: center;
+
+  padding: $paddin-large 0;
+
+  h2 {
+    font-size: $font-size-medium;
+    color: $color-blue;
+    padding: $paddin-medium 0;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
+
+  .photos {
+    width: 100%;
+    height: 32rem;
+    position: relative;
+
+    overflow: hidden;
+
+
+    .image {
+      width: max-content;
+      height: max-content;
+
+    }
+    .tech {
+      position: absolute;
+      top: 8em;
+      right: -6rem;
+
+      border-top: 2rem solid white;
+      border-left: 2rem solid white;
     }
   }
 }
 
-.main-content {
-  position: relative;
-  top: 9rem;
-  height: max-content;
+.projects {
 
+  width: 100%;
+  background-color: white;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  .about-me {
-    display: flex;
+  gap: 2rem;
+
+  padding: $paddin-extra-large 0;
+
+  h2 {
+    @include defaultWidth(100rem);
+
+    color: white;
+    padding: $paddin-large 0;
+    text-align: center;
+
+    font-size: $font-size-medium;
+
+    align-self: flex-start;
+
+    background-color: $color-black;
+
+    box-shadow: -4px 8px 5px rgba(150, 150, 150, .58);
+  }
+
+  .project-grid {
+    @include defaultWidth(100rem);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(48rem, 16rem));
+    gap: 2rem;
     align-items: flex-start;
     justify-content: center;
 
-    grid-gap: 3rem;
-
-    height: max-content;
-
-    margin: 0 auto;
-
-    @include defaultPadding;
-
-    h2 {
-      @include title;
+    .project-container {
+      box-shadow: 10px 8px 4px rgba(150, 150, 150, .1);
+      overflow: hidden;
+      border-radius: .4rem;
     }
 
-    p {
-      letter-spacing: 0.8px;
-      font-weight: 600;
-      padding: 1rem;
-    }
+    .project-item {
+      position: relative;
 
-    .resume {
       width: 100%;
-      max-width: 70rem;
+      height: 100%;
+
+     &:hover {
+        .project-links {
+
+          z-index: 100;
+
+          opacity: 1;
+          visibility: visible;;
+
+          transition: .3s ease-in-out;
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+      }
+
     }
 
-    .photos {
-      width: max-content;
-      height: max-content;
-      position: relative;
+    .project-links {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s ease-in-out;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
 
-      width: max-content;
-      height: max-content;
-      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      grid-gap: 4rem;
+
+      background-color: rgba(0, 0, 0, 0);
 
 
-      .image {
-        width: 100%;
-        width: 100%;
-        overflow: hidden;
-
-        img {
-          width: 100%;
-          width: 100%;
-          border-radius: 0.4rem;
-          box-shadow: 7px 5px 5px rgba(100, 100, 100, 0.2);
-        }
-      }
-
-      .gamer {
-        position: absolute;
-        top: 9rem;
-        right: -5rem;
-        img {
-          border-top: 16px solid white;
-          border-left: 16px solid white;
-        }
-      }
-
-      .gamer {
-        position: absolute;
-        top: 9rem;
-        right: -5rem;
-        img {
-          border-top: 16px solid white;
-          border-left: 16px solid white;
-        }
+      a {
+        display: block;
+        padding: $paddin-medium;
+        color: white;
+        border: 1px solid $color-blue;
+        border-radius: .8rem;
       }
     }
+
   }
 
-  .projects {
-    width: 100%;
-    height: max-content;
+}
 
-    display: flex;
-    flex-direction: column;
+.api-projects {
+  h3 {
+    width: 100%;
+    color: white;
+    text-align: center;
+    letter-spacing: 1.6px;
+    background-color: $color-blue;
+    padding: $paddin-small;
+  }
+
+  ul {
+    list-style: none;
+    padding: $paddin-large 0;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
     grid-gap: 2rem;
 
-    background-color: $color-secondary;
+    a {
+      color: $color-black;
+      letter-spacing: 1.6px;
 
-    @include defaultPadding;
-
-    h2 {
-      @include title;
-
-      width: 100%;
-      text-align: center;
-      color: white;
-      font-size: 3rem;
-    }
-
-    hr {
-        border-color: rgba(160, 160, 160, 0.4);
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+      display: flex;
       align-items: center;
-      justify-items: center;
-      grid-gap: 3rem;
+      grid-gap: .8rem;
 
 
-      .project-container {
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        grid-gap: 1.4rem;
-      }
-
-      .project-item {
-          overflow: hidden;
-          position: relative;
-          max-width: 45rem;
-
-          border-radius: .4rem;
-
-        .project-links {
-          width: 100%;
-          background-color: rgba(0, 0, 0, 0.84);
-
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          right: 0;
-          left: 0;
-
-          display: flex;
-          align-items: center;
-          justify-content: space-around;
-
-          transition: .4s ease-in-out;
-          opacity: 0;
-          visibility: hidden;
-
-
-          a {
-            display: block;
-
-            font-size: 2rem;
-            font-weight: 700;
-
-            color: white;
-
-            border: 1px solid $color-primary;
-            border-radius: .4rem;
-
-            padding: 1.4rem;
-            transition: .4s ease;
-
-
-            i {
-              margin-right: 1rem;
-              font-size: 1.7rem;
-            }
-          }
-        }
-
-        &:hover .project-links {
-          transition: .4s ease;
-          opacity: 1;
-          visibility: visible;
-
-          a:hover {
-            transition: .4s ease;
-            background-color: rgba(255, 255, 255, 0.15);
-          }
-        }
-      }
-
-      .make-with {
-        width: 100%;
-        border: 1px solid rgba(100, 100, 100, 0.44);
-
-        border-radius: .4rem;
-        background-color: $color-secondary;
-
-        .technologies {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          align-items: center;
-          justify-items: center;
-
-          li {
-            padding: 1rem;
-
-            font-weight: 900;
-            color: white;
-          }
-        }
-      }
-
-      .api-projects {
-        display: flex;
-        flex-direction: column;
-        grid-gap: 2.4rem;
-        grid-gap: 2.4rem;
-
-        align-self: flex-start;
-        justify-self: flex-start;
-
-          h3 {
-              @include title;
-
-              color: white;
-          }
-
-        .api-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 1.5rem;
-
-          li {
-
-              a {
-
-                width: 100%;
-                height: 100%;
-                border: 1px solid white;
-                border-radius: .3rem;
-
-                display: block;
-                padding: 1rem;
-                font-size: 2rem;
-                color: white;
-
-                transition: .3s ease;
-                font-weight: 400;
-
-                text-align: center;
-
-                i {
-                    color: $color-primary;
-                    margin-right: 1rem ;
-                    width: fit-content;
-                    height: 100%;
-                    font-size: 1.4rem;
-                }
-
-                &:hover {
-                    font-weight: 900;
-                    transition: .3s ease;
-
-                }
-
-            }
-          }
-
-        }
-        .make-with {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            grid-gap: 1rem;
-            padding: 1.3rem;
-
-          p {
-              color: white;
-          }
-        }
+      &:hover {
+        color: $color-blue;
       }
 
     }
   }
+
 }
 
 .hard-skills {
-    @include defaultPadding;
+  width: 100%;
+  padding: $paddin-extra-large 0;
 
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+
+  h2 {
+    @include defaultWidth(100rem);
+    background-color:  $color-blue;
+    color: white;
+
+    padding: $paddin-medium;
+
+    box-shadow: -4px 8px 5px rgba(150, 150, 150, .58);
+    align-self: flex-end;
+  }
+
+
+  .skills {
     width: 100%;
-    height: 100%;
 
-    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 2rem;
 
-    h2 {
-        @include title;
+    padding: $paddin-large 0;
 
-        text-align: center;
+
+    li {
+      border: 1px solid $color-blue;
+      border-radius: .4rem;
+
+      text-align: center;
+      list-style: none;
+      padding: $paddin-small;
+      letter-spacing: .2rem;
+
+      box-shadow: 3px 10px 6px rgba(150, 150, 150, .1);
+      transition: .3s ease;
+
+      &:hover {
+        box-shadow: 3px 10px 6px rgba(150, 150, 150, .28);
+        transition: .3s ease-out;
+        color: white;
+        background-color: $color-blue;
+      }
     }
-
-    hr {
-        margin: 1rem 0 3rem  0;
-    }
-
-    .skills {
-        width: 100%;
-
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
-        grid-gap: 1.5rem;
-
-
-        li {
-            text-align: center;
-            font-weight: 900;
-
-            border: 1px solid black;
-            border-radius: .4rem;
-
-            box-shadow: 7px 8px 7px rgba(100, 100, 100, 0.12);
-
-            padding: 1rem;
-
-            letter-spacing: 1px;
-
-            &:nth-child(even)  {
-                color: white;
-                background-color: $color-secondary;
-            }
-        }
-    }
-
-
+  }
 }
 
-
 .footer {
-    margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    width: 100%;
-    height: 7rem;
+  padding: $paddin-extra-large;
+  background-color: $color-black;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-family: $font-text-primary;
 
-    position: relative;
-    background-color: $color-secondary;
+  font-size: 1.6rem;
 
-    p {
-        font-weight: bolder;
-        color: white;
-        color: white;
-        a {
-            z-index: 1000;
-            display: inline-block;
-            color: $color-primary;
-            font-weight: bolder;
+  border-top: 3px solid $color-blue;
+
+  p {
+    color: white;
+  }
+
+  a {
+    color: $color-blue;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .header {
+      background-size: cover;
+      padding: $paddin-small 0;
+      height: 16rem;
+
+      .logo {
+        width: 100%;
+        font-size: 2.4rem;
+        height: 6rem;
+
+        border-radius: 0;
+      }
+
+      .navigation {
+        width: 100%;
+        padding: $paddin-small;
+
+        ul {
+          gap: .8rem;
+          justify-content: space-between;
+
+          li {
+            background-color: $color-blue;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+
+
+
+            a {
+              color: white;
+              font-size: 1.2rem;
+              font-weight: bolder;
+            }
+          }
+
+
         }
+      }
+
     }
 
+    .about-me {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: none;
+
+      text-align: justify;
+
+      row-gap: 2rem;
+
+      padding: 0 $paddin-small;
+
+
+      h2 {
+        font-size: $font-size-small;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+      .photos {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: $paddin-large;
+
+
+        height: max-content;
+
+        .image {
+          img {
+            border-radius: .8rem;
+            box-shadow: 12px 10px 5px rgba(150, 150, 150, .2);
+          }
+        }
+
+        .tech {
+          position: unset;
+          border: none;
+        }
+      }
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: row wrap;
+      align-items: center;
+
+      h2 {
+        font-size: $font-size-small;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 32rem);
+      }
+
+      .api-projects {
+        h3 {
+            width: 100%;
+        }
+      }
+    }
+
+    .hard-skills {
+      h2 {
+        font-size: $font-size-small;
+        text-align: center;
+      }
+    }
+}
+
+@media (max-width: 425px) {
+  .header {
+    background-size: cover;
+    padding: $paddin-small 0;
+    height: 16rem;
+
+    .logo {
+      width: 100%;
+      font-size: 2.4rem;
+      height: 6rem;
+
+      border-radius: 0;
+    }
+
+    .navigation {
+      width: 100%;
+      padding: $paddin-small;
+
+      ul {
+        gap: .8rem;
+        justify-content: space-between;
+
+        li {
+          background-color: $color-blue;
+          box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+
+
+
+          a {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bolder;
+          }
+        }
+
+
+      }
+    }
+  }
+
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: none;
+
+    text-align: justify;
+
+    row-gap: 2rem;
+
+    padding: 0 $paddin-small;
+
+
+    h2 {
+      font-size: $font-size-small;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+
+  .projects {
+    gap: .8rem;
+
+    h2 {
+      width: 100%;
+      font-size: 2rem;
+    }
+
+    .project-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin: none;
+      row-gap: 2rem;
+
+      padding: $paddin-small;
+    }
+  }
+
+  .api-projects {
+    h3 {
+      font-size: 2rem;
+      padding: none;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        line-height: 150%;
+      }
+    }
+  }
+
+  .hard-skills {
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+
+
+  .skills {
+    gap: .4rem;
+  }
 }
