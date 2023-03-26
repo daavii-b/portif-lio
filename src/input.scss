@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 5.6rem;
 
 
-  background-image:  url('/public/assets/images/header/nubelson-fernandes--Xqckh_XVU4-unsplash.jpg');
+  background-image:  url('/public/assets/images/header/header-image.jpg');
   background-position: left;
   background-repeat: no-repeat;
   background-size: auto;
@@ -77,6 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .logo {
     @include defaultWidth(100rem);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,6 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .social-media {
   @include defaultWidth(60rem);
+
   margin: 2rem auto;
   display: flex;
   align-items: center;
@@ -185,6 +187,28 @@ h1, h2, h3, h4, h5, h6 {
 
 
   }
+}
+
+.download-cv {
+    position: absolute;
+    top: 28rem;
+    left: 2rem;
+
+
+    width: max-content;
+    height: max-content;
+
+
+    a {
+        padding: $paddin-medium;
+        color: white;
+        border-radius:  .4rem;;
+        box-shadow:  8px 10px 6px rgba(150, 150, 150, .30);
+        background-color: $color-blue;
+
+        font-family: $font-text-main;
+        font-weight: 600;
+    }
 }
 
 .about-me {
@@ -261,7 +285,7 @@ h1, h2, h3, h4, h5, h6 {
 
     background-color: $color-black;
 
-    box-shadow: -4px 8px 5px rgba(150, 150, 150, .58);
+    box-shadow: 4px 8px 5px rgba(150, 150, 150, .58);
   }
 
   .project-grid {
@@ -633,7 +657,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
   }
 
@@ -687,5 +711,11 @@ h1, h2, h3, h4, h5, h6 {
 
   .skills {
     gap: .4rem;
+  }
+
+  .footer {
+    p {
+        font-size: 1.4rem;
+    }
   }
 }
