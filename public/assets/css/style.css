@@ -300,10 +300,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .hard-skills .skills {
   width: 100%;
+  max-width: 100rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
   gap: 2rem;
-  padding: 2.4rem;
+  padding: 2.4rem 0;
 }
 .hard-skills .skills li {
   border: 1px solid rgb(0, 104, 255);
@@ -370,6 +371,13 @@ h1, h2, h3, h4, h5, h6 {
   }
   .social-media address a {
     padding: 1.6rem;
+  }
+  .download-cv {
+    position: absolute;
+    top: 21rem;
+    left: 2rem;
+    width: max-content;
+    height: max-content;
   }
   .about-me {
     display: flex;
@@ -497,8 +505,9 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     font-size: 2rem;
   }
-  .skills {
-    gap: 0.4rem;
+  .hard-skills .skills {
+    gap: 1.6rem;
+    padding: 2.4rem 0.8rem;
   }
   .footer p {
     font-size: 1.4rem;
