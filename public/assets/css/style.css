@@ -7,6 +7,7 @@
 
 :root, html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -107,11 +108,13 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.6rem;
 }
 .social-media address {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   grid-gap: 4rem;
   padding: 2.4rem 0;
 }
@@ -126,6 +129,11 @@ h1, h2, h3, h4, h5, h6 {
 .social-media address span a {
   padding: 0 2.4rem;
   color: #171810;
+  transition: 0.3s ease;
+}
+.social-media address span a:hover {
+  transition: 0.3s ease-out;
+  color: rgba(147, 55, 15, 0.6745098039);
 }
 
 .download-cv {
@@ -139,10 +147,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.6rem;
   color: white;
   border-radius: 0.4rem;
-  box-shadow: 8px 10px 6px rgba(150, 150, 150, 0.3);
   background-color: rgb(0, 104, 255);
+  box-shadow: 8px 7px 6px rgba(150, 150, 150, 0.2);
   font-family: "Raleway", sans-serif;
   font-weight: 600;
+}
+.download-cv a:active {
+  box-shadow: 0px -10px 6px rgba(150, 150, 150, 0.2);
 }
 
 .about-me {
@@ -369,15 +380,30 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.2rem;
     font-weight: bolder;
   }
-  .social-media address a {
+  .social-media {
+    width: 100%;
+    max-width: 30rem;
+  }
+  .social-media address {
+    padding: 1.6rem;
+  }
+  .social-media address span {
+    font-size: 2rem;
+  }
+  .social-media address span a {
+    width: 100%;
+    max-width: 15rem;
     padding: 1.6rem;
   }
   .download-cv {
     position: absolute;
-    top: 21rem;
+    top: 20rem;
     left: 2rem;
     width: max-content;
     height: max-content;
+  }
+  .download-cv a {
+    font-size: 1.4rem;
   }
   .about-me {
     display: flex;
@@ -458,6 +484,27 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.2rem;
     font-weight: bolder;
   }
+  .social-media {
+    width: 100%;
+    max-width: 20rem;
+    margin: 1rem 0;
+    margin-left: 20rem;
+  }
+  .social-media address {
+    width: 100%;
+    height: max-content;
+    padding: 0.8rem;
+  }
+  .social-media address span {
+    font-size: 1.8rem;
+  }
+  .social-media address span a {
+    display: block;
+    padding: 0.8rem;
+  }
+  .download-cv {
+    top: 19rem;
+  }
   .about-me {
     display: flex;
     flex-direction: column;
@@ -511,6 +558,61 @@ h1, h2, h3, h4, h5, h6 {
   }
   .footer p {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 320px) {
+  .header .logo {
+    font-size: 1.8rem;
+  }
+  .header .navigation ul li a {
+    font-size: 1rem;
+  }
+  .social-media {
+    width: 100%;
+    max-width: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    margin-left: 13rem;
+  }
+  .social-media address.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: max-content;
+    padding: 0.2rem 0.8rem;
+  }
+  .social-media address.links span {
+    font-size: 1.4rem;
+  }
+  .social-media address.links span a {
+    display: block;
+    padding: 0.8rem;
+  }
+  .download-cv {
+    top: 18rem;
+    left: 0.8rem;
+  }
+  .download-cv a {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+  }
+  .about-me h2 {
+    font-size: 1.8rem;
+  }
+  .about-me p {
+    font-size: 1.2rem;
+  }
+  .projects h2 {
+    font-size: 1.6rem;
+  }
+  .hard-skills h2 {
+    font-size: 1.6rem;
+  }
+  .hard-skills .skills li {
+    font-size: 1.2rem;
   }
 }
 

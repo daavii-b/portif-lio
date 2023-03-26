@@ -7,7 +7,7 @@ $font-text-secondary: 'Poppins', sans-serif;
 
 $color-black: #171810;
 $color-blue:  rgb(0, 104, 255);
-$color-brown: #64301a;
+$color-brown: #93370fac;
 
 $paddin-small: .8rem;
 $paddin-medium: 1.6rem;
@@ -33,6 +33,7 @@ $font-size-large: 4rem;
 
 :root, html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -105,43 +106,43 @@ h1, h2, h3, h4, h5, h6 {
     @include defaultWidth(80rem);
 
      ul {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
 
-      gap: 1.6rem;
+        gap: 1.6rem;
 
-      li {
-        width: 100%;
-        text-align: center;
+        li {
+            width: 100%;
+            text-align: center;
 
-        list-style: none;
+            list-style: none;
 
-        border: 1px solid $color-blue;
-        border-radius: .4rem;
+            border: 1px solid $color-blue;
+            border-radius: .4rem;
 
-        box-shadow: 4px 7px 6px rgba(150, 150, 150, .15);
+            box-shadow: 4px 7px 6px rgba(150, 150, 150, .15);
 
-        transition: .3s ease-in;
+            transition: .3s ease-in;
 
-        &:hover {
-          background-color: $color-blue;
-          transition: .3s ease-out;
+            &:hover {
+                background-color: $color-blue;
+                transition: .3s ease-out;
 
-           a {
-            color: white;
-           }
-        }
+                a {
+                    color: white;
+                }
+            }
 
-        a {
-          display:block;
-          font-family: $font-text-secondary;
-          font-size: 1.6rem;
-          font-weight: 800;
-          letter-spacing: 2.4px;
-          color: black;
-          padding: $paddin-small;
-        }
+            a {
+                display:block;
+                font-family: $font-text-secondary;
+                font-size: 1.6rem;
+                font-weight: 800;
+                letter-spacing: 2.4px;
+                color: black;
+                padding: $paddin-small;
+            }
       }
     }
   }
@@ -162,14 +163,16 @@ h1, h2, h3, h4, h5, h6 {
 
   background-color: rgba(0, 0, 0, 0.03);
 
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: .6rem;
 
   address {
-    display: flex;
-    align-items: center;
-    grid-gap: $paddin-extra-large;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      grid-gap: $paddin-extra-large;
 
-    padding: $paddin-large 0;
+      padding: $paddin-large 0;
 
 
     span {
@@ -182,6 +185,12 @@ h1, h2, h3, h4, h5, h6 {
       a {
         padding: 0 $paddin-large;
         color: $color-black;
+        transition: .3s ease;
+
+        &:hover {
+            transition: .3s ease-out;
+            color: $color-brown;
+        }
       }
     }
 
@@ -203,11 +212,16 @@ h1, h2, h3, h4, h5, h6 {
         padding: $paddin-medium;
         color: white;
         border-radius:  .4rem;;
-        box-shadow:  8px 10px 6px rgba(150, 150, 150, .30);
         background-color: $color-blue;
 
+        box-shadow:  8px 7px 6px rgba(150, 150, 150, .20);
         font-family: $font-text-main;
         font-weight: 600;
+
+        &:active {
+            box-shadow:  0px -10px 6px rgba(150, 150, 150, .20);
+
+        }
     }
 }
 
@@ -521,22 +535,33 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .social-media {
+        @include defaultWidth(30rem);
+
         address {
-            a {
-                padding: $paddin-medium;
+            padding: $paddin-medium;
+            span {
+                font-size: 2.0rem;
+                a {
+                    @include defaultWidth(15rem);
+                    padding: $paddin-medium;
+                }
             }
         }
     }
 
     .download-cv {
         position: absolute;
-        top: 21rem;
+        top: 20rem;
         left: 2rem;
 
 
         width: max-content;
         height: max-content;
 
+
+        a {
+            font-size: 1.4rem;
+        }
     }
 
 
@@ -652,6 +677,31 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
+  .social-media {
+    @include defaultWidth(20rem);
+
+    margin: 1rem 0;
+    margin-left: 20rem;
+    address {
+        width: 100%;
+        height: max-content;
+        padding: $paddin-small;
+
+        span {
+            font-size: 1.8rem;
+            a {
+                display: block;
+                padding: $paddin-small;
+            }
+        }
+
+    }
+  }
+
+  .download-cv {
+    top: 19rem;
+  }
+
   .about-me {
     display: flex;
     flex-direction: column;
@@ -733,4 +783,96 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.4rem;
     }
   }
+}
+
+
+@media (max-width: 320px) {
+
+    .header {
+
+        .logo {
+            font-size: 1.8rem;
+        }
+
+        .navigation {
+            ul {
+
+                li {
+                     a {
+                         font-size: 1rem;
+                     }
+                }
+            }
+        }
+    }
+
+    .social-media {
+        @include defaultWidth(18rem);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 1rem 0;
+        margin-left: 13rem;
+
+        address.links {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: max-content;
+            padding: .2rem .8rem;
+
+            span {
+                font-size: 1.4rem;
+                a {
+                    display: block;
+                    padding: .8rem;
+                }
+            }
+
+        }
+      }
+
+    .download-cv {
+        top: 18rem;
+        left: .8rem;
+
+        a {
+            padding: $paddin-small;
+            font-size: 1.2rem;
+        }
+    }
+
+
+    .about-me {
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size : 1.2rem;
+        }
+    }
+
+    .projects {
+        h2 {
+            font-size: 1.6rem;
+        }
+    }
+
+    .hard-skills {
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        .skills {
+            li {
+                font-size: 1.2rem;
+            }
+        }
+    }
 }
