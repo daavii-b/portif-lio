@@ -39,7 +39,8 @@ $font-size-large: 4rem;
 body {
   font-size: 1.6rem;
   letter-spacing: 1px;
-  font-family: $font-text-main;
+  font-family: $font-text-secondary;
+  font-weight: 600;
 }
 
 button:hover, a:hover {
@@ -159,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 2rem auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 
   background-color: rgba(0, 0, 0, 0.03);
 
@@ -175,28 +176,50 @@ h1, h2, h3, h4, h5, h6 {
       padding: $paddin-large 0;
 
 
-    span {
-      @include defaultWidth(20rem);
-      width: 100%;
-      height: 100%;
-      font-size: 2.4rem;
-      text-align: center;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      a {
-        padding: 0 $paddin-large;
-        color: $color-black;
-        transition: .3s ease;
+        span {
+          @include defaultWidth(30rem);
+          width: 100%;
+          height: 100%;
+          font-size: 2.4rem;
+          text-align: center;
 
-        &:hover {
-            transition: .3s ease-out;
-            color: $color-brown;
+          a {
+            padding: 0 $paddin-large;
+            color: $color-black;
+            transition: .3s ease;
+
+            &:hover {
+                transition: .3s ease-out;
+                color: $color-blue;
+            }
+          }
         }
-      }
     }
+
 
 
   }
 }
+.libutton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.6rem;
+    text-align: center;
+    outline: none;
+    text-decoration: none !important;
+    color: #ffffff !important;
+    width: 23rem;
+    height: 3.2rem;
+    border-radius: 16px;
+    background-color: #0A66C2;
+    font-family: "SF Pro Text", Helvetica, sans-serif;
+  }
 
 .download-cv {
     position: absolute;
@@ -232,6 +255,8 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: minmax(66rem, 32rem) minmax(33rem, 16rem);
 
+  gap: 5rem;
+
   align-items: center;
   justify-content: center;
 
@@ -246,6 +271,13 @@ h1, h2, h3, h4, h5, h6 {
   p {
     font-size: 1.6rem;
     line-height: 150%;
+    color: $color-black;
+
+    font-family: $font-header-secondary;
+    strong {
+        font-weight: 700;
+    }
+
   }
 
   .photos {
